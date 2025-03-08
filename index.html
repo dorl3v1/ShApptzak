@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>מערכת שמירות וחופשות</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="apple-touch-icon" href="icon.png">
+</head>
+<body>
+    <div class="app-container">
+        <!-- סרגל ניווט עליון -->
+        <header class="nav-bar">
+            <h1>שמירות וחופשות</h1>
+            <div class="header-actions">
+                <button id="user-type-toggle" class="toggle-button">
+                    <span class="toggle-text">מפקד</span>
+                </button>
+            </div>
+        </header>
+
+        <!-- תפריט ניווט תחתון -->
+        <nav class="tab-bar">
+            <button class="tab-button active" data-tab="schedule">
+                <svg viewBox="0 0 24 24" class="tab-icon"><path d="M19,4H18V2H16V4H8V2H6V4H5C3.89,4 3,4.9 3,6V20A2,2 0 0,0 5,22H19A2,2 0 0,0 21,20V6A2,2 0 0,0 19,4M19,20H5V10H19V20M19,8H5V6H19V8Z"></path></svg>
+                <span class="tab-label">שמירות</span>
+            </button>
+            <button class="tab-button" data-tab="vacations">
+                <svg viewBox="0 0 24 24" class="tab-icon"><path d="M17.41,2C17.58,2 17.75,2.07 17.89,2.21L19.79,4.11C20.07,4.39 20.07,4.86 19.79,5.14L18.25,6.68L15.32,3.75L16.86,2.21C17,2.07 17.17,2 17.41,2M15.32,4.89L18.25,7.83L8.56,17.5H5.61V14.56L15.32,4.89Z"></path></svg>
+                <span class="tab-label">חופשות</span>
+            </button>
+            <button class="tab-button" data-tab="soldiers">
+                <svg viewBox="0 0 24 24" class="tab-icon"><path d="M12,4A4,4 0 0,1 16,8A4,4 0 0,1 12,12A4,4 0 0,1 8,8A4,4 0 0,1 12,4M12,14C16.42,14 20,15.79 20,18V20H4V18C4,15.79 7.58,14 12,14Z"></path></svg>
+                <span class="tab-label">חיילים</span>
+            </button>
+        </nav>
+
+        <!-- אזור תוכן ראשי -->
+        <main class="content">
+            <!-- תצוגת לוח שמירות -->
+            <section id="schedule-tab" class="tab-content active">
+                <div class="section-header">
+                    <h2>לוח שמירות</h2>
+                    <button id="add-shift" class="action-button commander-only">+</button>
+                </div>
+
+                <div class="date-navigator">
+                    <button class="nav-button">&lt;</button>
+                    <span class="current-date">12-18 במרץ, 2025</span>
+                    <button class="nav-button">&gt;</button>
+                </div>
+
+                <div class="schedule-list">
+                    <!-- דוגמאות לשמירות -->
+                </div>
+            </section>
+
+            <!-- תצוגת חופשות -->
+            <section id="vacations-tab" class="tab-content">
+                <div class="section-header">
+                    <h2>חופשות</h2>
+                    <button id="add-vacation" class="action-button commander-only">+</button>
+                </div>
+
+                <div class="date-navigator">
+                    <button class="nav-button">&lt;</button>
+                    <span class="current-date">מרץ 2025</span>
+                    <button class="nav-button">&gt;</button>
+                </div>
+
+                <div class="vacation-list">
+                    <!-- דוגמאות לחופשות -->
+                </div>
+            </section>
+
+            <!-- תצוגת חיילים -->
+            <section id="soldiers-tab" class="tab-content">
+                <div class="section-header">
+                    <h2>רשימת חיילים</h2>
+                    <button id="add-soldier" class="action-button commander-only">+</button>
+                </div>
+
+                <div class="search-bar">
+                    <input type="text" placeholder="חיפוש חייל...">
+                </div>
+
+                <div class="soldiers-list">
+                    <!-- דוגמאות לחיילים -->
+                </div>
+            </section>
+        </main>
+
+        <!-- חלוניות מודאליות -->
+        <div id="modal-container" class="modal-container hidden">
+            <div class="modal">
+                <div class="modal-header">
+                    <h3>הוספת שמירה חדשה</h3>
+                    <button class="close-modal">×</button>
+                </div>
+                <div class="modal-content">
+                    <!-- תוכן מודאלי ישתנה בהתאם לפעולה -->
+                </div>
+                <div class="modal-footer">
+                    <button class="secondary-button">ביטול</button>
+                    <button class="primary-button">שמירה</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
